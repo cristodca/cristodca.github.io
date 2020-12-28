@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --main-white: #FAFAFA;
+    --main-light-gray: #ECECEC;
+    --main-dark-gray: #5D5D5D;
+    --main-black: #171717;
+    --main-yellow: #FEF000;
+    --main-cyan: #1BC86B;
+    --main-pink: #EA6E80;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--main-lwhite);
+    font-family: 'Roboto', 'Open Sans', sans-serif, 'Poppins';
+    font-size: 16px;
+}
+
+/* HEADER styles ========= */
+header.header {
+    background: var(--main-dark-gray);
+    padding: 1rem;
+}
+    .header-elements {
+        margin-left: 30vw;
+        text-align: center;
+        
+    }
+        .header-elements a {
+            color: var(--main-white);
+            text-decoration: none;
+            padding: 1rem;
+            position: relative;
+        }
+            .header-elements a:before  {
+                content: "";
+                position: absolute;
+                width: calc(100% - 2rem);
+                height: 2px;
+                bottom: 1rem;
+                left: 1rem;
+                background: var(--main-yellow);
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: .25s linear;
+            }
+            .header-elements a:hover:before, .header-elements a:focus:before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
