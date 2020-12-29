@@ -16,40 +16,171 @@
 }
 
 body {
-    background: var(--main-lwhite);
+    background: var(--main-white);
     font-family: 'Roboto', 'Open Sans', sans-serif, 'Poppins';
     font-size: 16px;
+    overflow-x: hidden;
+}
+
+.grid-container {
+    display: grid;
+    grid-template: repeat(6, auto) / 1fr;
+    grid-template-areas: "main-header" "main-aboutme" "main-contact" "main-work" "main-feedback" "main-footer";
 }
 
 /* HEADER styles ========= */
-header.header {
-    background: var(--main-dark-gray);
-    padding: 1rem;
+.header-container {
+    grid-area: main-header;
+    display: grid;
+    grid-template: 3rem 500px / 30% 70%;
+    grid-template-areas: "header-black header" "header-black header-photo";
+    width: 100vw;
 }
-    .header-elements {
-        margin-left: 30vw;
-        text-align: center;
-        
+    header.header {
+        background: var(--main-dark-gray);
+        padding: .75rem;
+        grid-area: header;
     }
-        .header-elements a {
-            color: var(--main-white);
-            text-decoration: none;
-            padding: 1rem;
-            position: relative;
+        .header-elements {
+            text-align: center;
         }
-            .header-elements a:before  {
-                content: "";
-                position: absolute;
-                width: calc(100% - 2rem);
-                height: 2px;
-                bottom: 1rem;
-                left: 1rem;
-                background: var(--main-yellow);
-                visibility: hidden;
-                transform: scaleX(0);
-                transition: .25s linear;
+            .header-elements a {
+                color: var(--main-white);
+                text-decoration: none;
+                padding: 1rem;
+                position: relative;
             }
-            .header-elements a:hover:before, .header-elements a:focus:before {
-                visibility: visible;
-                transform: scaleX(1);
-            }
+                .header-elements a:before  {
+                    content: "";
+                    position: absolute;
+                    width: calc(100% - 2rem);
+                    height: 2px;
+                    bottom: 1rem;
+                    left: 1rem;
+                    background: var(--main-yellow);
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transition: .25s linear;
+                }
+                .header-elements a:hover:before, .header-elements a:focus:before {
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+    /* header BLACK space styles */
+    .black {
+        background: var(--main-black);
+        grid-area: header-black;
+    }
+    /* header PHOTO styles */
+    .img-container {
+        grid-area: header-photo;
+        height: 100%;
+        background-image: url(../img/cristodcaBN.jpg);
+        background-size: cover;
+    }
+
+/* ABOUT ME styles ========= */
+.aboutme-container {
+    grid-area: main-aboutme;
+    display: grid;
+    grid-template: 30% 70% / repeat(2, 50%);
+    grid-template-areas: "aboutme-photo aboutme-title" "aboutme-photo aboutme-text";
+    background-color: transparent;
+}
+    .aboutme-photo {
+        grid-area: aboutme-photo;
+        margin: 3rem 0;
+    }
+        .aboutme-photo img {
+            max-width: 80%;
+            display: block;
+            margin: auto;
+        }
+    .aboutme-title {
+        grid-area: aboutme-title;
+    }
+    .aboutme-text {
+        grid-area: aboutme-text;
+    }
+
+/* CONTACT styles ========= */
+.contact-container {
+    grid-area: main-contact;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--main-dark-gray);
+}
+    .contact-container h2 {
+        align-self: center;
+    }
+    .contact-container a {
+        align-self: center;
+    }
+
+/* WORK styles ========= */
+.work-container{
+    grid-area: main-work;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .work-container h2 {
+        align-self: center;
+    }
+    .work-list {
+        align-self: center;
+    }
+    .all-works-grid {
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* justify-content: space-between; */
+        grid-gap: 10px;
+        width: 80%;
+        height: 100vh;
+    }
+        .all-works-content {
+            width: 100%;
+            height: 100%;
+            -webkit-box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.8); 
+            box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.8);
+        }
+
+/* FEEDBACK styles ========= */
+.feedback-container {
+    grid-area: main-feedback;
+    padding: 1rem;
+    background-color: var(--main-light-gray);
+    /* border: 1px solid red; */
+}
+    .feedback-container h2 {
+        /* border: 1px solid blue; */
+        text-align: center;
+    }
+    .feedback-grid {
+        /* border: 1px solid green; */
+        display: grid;
+        width: 100vw;
+        grid-template: 1fr / repeat(5, auto);
+        grid-gap: 50px;
+        justify-content: center;
+    }
+        .feedback-content {
+            border: 1px solid lightslategray;
+            border-radius: 5px;
+            width: 500px;
+            height: 300px;
+        }
+
+/* FOOTER styles ========= */
+.footer-container {
+    grid-area: main-footer;
+    background-color: var(--main-black);
+    color: var(--main-white);
+    padding: 2rem;
+}
+    .footer-container h2{
+        text-align: center;
+    }
