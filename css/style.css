@@ -40,6 +40,7 @@ body {
         background: var(--main-dark-gray);
         padding: .75rem;
         grid-area: header;
+        font-size: 1.3rem;
     }
         .header-elements {
             text-align: center;
@@ -47,7 +48,7 @@ body {
             .header-elements a {
                 color: var(--main-white);
                 text-decoration: none;
-                padding: 1rem;
+                padding: .75rem;
                 position: relative;
             }
                 .header-elements a:before  {
@@ -55,7 +56,7 @@ body {
                     position: absolute;
                     width: calc(100% - 2rem);
                     height: 2px;
-                    bottom: 1rem;
+                    bottom: .75rem;
                     left: 1rem;
                     background: var(--main-yellow);
                     visibility: hidden;
@@ -70,7 +71,58 @@ body {
     .black {
         background: var(--main-black);
         grid-area: header-black;
+        color: var(--main-white);
+        display: grid;
+        grid-template: 3rem 1fr / 1fr;
+        position: relative;
     }
+            .black-title h1 {
+                font-size: 2rem;
+                padding: .25rem 0;
+                text-align: center;
+            }
+        .black-text {
+            height: 100%;
+            width: 100%;
+        }
+        .black-text h2 {
+            width: 200%;
+            font-size: 4rem;
+            display: inline;
+            position: absolute;
+            margin: 25% 0 0 25%;
+        }
+        .title-tags {
+            position: absolute;
+            float: left;
+            width: 700px;
+            margin: 40% 0 0 25%;
+        }
+        .title-tags p {
+            font-size: 1.5rem;
+            display: inline-block;
+            background-color: var(--main-yellow);
+            color: var(--main-black);
+            padding: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* .black-text p:nth-of-type(1) {
+            font-size: 1rem;
+            position: absolute;
+            margin: 70% 0 0 25%;
+        }
+        .black-text p:nth-of-type(2) {
+            font-size: 1rem;
+            position: absolute;
+            margin: 70% 0 0 55%;
+        }
+        .black-text p:nth-of-type(3) {
+            font-size: 1rem;
+            position: absolute;
+            margin: 70% 0 0 75%;
+        } */
     /* header PHOTO styles */
     .img-container {
         grid-area: header-photo;
