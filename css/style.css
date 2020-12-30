@@ -155,7 +155,7 @@ body {
         font-size: 1.5rem;
         background: var(--main-light-gray);
     }
-    .aboutme-text p li {
+    .aboutme-text li {
         color: var(--main-dark-gray);
     }
 
@@ -170,9 +170,18 @@ body {
 }
     .contact-container h2 {
         align-self: center;
+        color: var(--main-light-gray);
+        margin-bottom: 15px;
     }
+        .contact-container h2 span {
+            text-decoration: underline;
+        }
     .contact-container a {
         align-self: center;
+        background-color: var(--main-pink);
+        text-decoration: none;
+        color: var(--main-black);
+        padding: 1rem;
     }
 
 /* WORK styles ========= */
