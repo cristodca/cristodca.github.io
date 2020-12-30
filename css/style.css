@@ -35,6 +35,8 @@ body {
     grid-template: 3rem 500px / 30% 70%;
     grid-template-areas: "header-black header" "header-black header-photo";
     width: 100vw;
+    -webkit-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.8); 
+    box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.8);
 }
     header.header {
         background: var(--main-dark-gray);
@@ -167,6 +169,8 @@ body {
     justify-content: center;
     flex-direction: column;
     background-color: var(--main-dark-gray);
+    -webkit-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.5); 
+    box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.5);
 }
     .contact-container h2 {
         align-self: center;
@@ -182,7 +186,34 @@ body {
         text-decoration: none;
         color: var(--main-black);
         padding: 1rem;
+        font-weight: bold;
     }
+
+
+
+
+    /* .header-elements a {
+        color: var(--main-white);
+        text-decoration: none;
+        padding: .75rem;
+        position: relative;
+    }
+        .header-elements a:before  {
+            content: "";
+            position: absolute;
+            width: calc(100% - 2rem);
+            height: 2px;
+            bottom: .75rem;
+            left: 1rem;
+            background: var(--main-yellow);
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: .25s linear;
+        }
+        .header-elements a:hover:before, .header-elements a:focus:before {
+            visibility: visible;
+            transform: scaleX(1);
+        } */
 
 /* WORK styles ========= */
 .work-container{
@@ -190,13 +221,48 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 2rem;
     }
     .work-container h2 {
         align-self: center;
+        background-color: var(--main-yellow);
+        color: var(--main-black);
+        padding: 1rem;
+        font-size: 2rem;
     }
     .work-list {
         align-self: center;
+        padding: 2rem;
     }
+        .work-list ul {
+            list-style: none;
+            float: left;
+            display: inline;
+        }
+            .work-list ul li {
+                display: inline;
+                margin: 0 5rem;
+                font-size: 1.5rem;
+                text-decoration: none;
+                position: relative;
+                cursor: pointer;
+            }
+            .work-list ul li:before  {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background: var(--main-yellow);
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: .25s linear;
+            }
+            .work-list ul li:hover:before, .work-list ul li:focus:before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
     .all-works-grid {
         align-self: center;
         display: grid;
@@ -209,23 +275,31 @@ body {
         .all-works-content {
             width: 100%;
             height: 100%;
-            -webkit-box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.8); 
-            box-shadow: 3px 3px 12px -2px rgba(0,0,0,0.8);
+            -webkit-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2); 
+            box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
         }
 
 /* FEEDBACK styles ========= */
 .feedback-container {
     grid-area: main-feedback;
-    padding: 1rem;
+    padding: 2rem 1rem;
     background-color: var(--main-light-gray);
     /* border: 1px solid red; */
+    margin-top: 2rem;
+    -webkit-box-shadow: 0px -3px 12px 0px rgba(0,0,0,0.2); 
+    box-shadow: 0px -3px 12px 0px rgba(0,0,0,0.2);
+    text-align: center;
 }
     .feedback-container h2 {
-        /* border: 1px solid blue; */
         text-align: center;
+        background-color: var(--main-yellow);
+        color: var(--main-black);
+        display: inline;
+        padding: 1rem;
     }
     .feedback-grid {
         /* border: 1px solid green; */
+        margin: 2rem 0;
         display: grid;
         width: 100vw;
         grid-template: 1fr / repeat(5, auto);
@@ -245,7 +319,14 @@ body {
     background-color: var(--main-black);
     color: var(--main-white);
     padding: 2rem;
+    text-align: center;
 }
-    .footer-container h2{
-        text-align: center;
+    .footer-container a {
+        text-decoration: none;
+    }
+    .footer-container a i{
+        font-size: 2rem;
+        margin: 5px;
+        color: var(--main-white);
+        /* text-align: center; */
     }
