@@ -18,7 +18,7 @@
 body {
     background: var(--main-white);
     font-family: 'Roboto', 'Open Sans', sans-serif, 'Poppins';
-    font-size: 16px;
+    font-size: 18px;
     overflow-x: hidden;
 }
 
@@ -107,22 +107,6 @@ body {
             font-weight: bold;
             margin-right: 10px;
         }
-        
-        /* .black-text p:nth-of-type(1) {
-            font-size: 1rem;
-            position: absolute;
-            margin: 70% 0 0 25%;
-        }
-        .black-text p:nth-of-type(2) {
-            font-size: 1rem;
-            position: absolute;
-            margin: 70% 0 0 55%;
-        }
-        .black-text p:nth-of-type(3) {
-            font-size: 1rem;
-            position: absolute;
-            margin: 70% 0 0 75%;
-        } */
     /* header PHOTO styles */
     .img-container {
         grid-area: header-photo;
@@ -135,13 +119,14 @@ body {
 .aboutme-container {
     grid-area: main-aboutme;
     display: grid;
-    grid-template: 30% 70% / repeat(2, 50%);
+    grid-template: 20% 80% / repeat(2, 50%);
     grid-template-areas: "aboutme-photo aboutme-title" "aboutme-photo aboutme-text";
     background-color: transparent;
+    margin: 3rem 0;
 }
     .aboutme-photo {
         grid-area: aboutme-photo;
-        margin: 3rem 0;
+        /* margin: 3rem 0; */
     }
         .aboutme-photo img {
             max-width: 80%;
@@ -150,9 +135,28 @@ body {
         }
     .aboutme-title {
         grid-area: aboutme-title;
+        /* display: ; */
+        justify-content: center;
+        align-content: center;
     }
+        .aboutme-title h2 {
+            background-color: var(--main-cyan);
+            /* display: inline; */
+            width: 220px;
+            height: 80px;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--main-black);
+        }
     .aboutme-text {
         grid-area: aboutme-text;
+        padding: 2rem 4rem 2rem 2rem;
+        font-size: 1.5rem;
+        background: var(--main-light-gray);
+    }
+    .aboutme-text p li {
+        color: var(--main-dark-gray);
     }
 
 /* CONTACT styles ========= */
